@@ -58,7 +58,12 @@ class BinaryTree:
             self._print_tree(node.r)
 
     def get_height(self):
-        return 0 if self.root is None else self._get_height(self.root)
+        if self.root is None:
+            return 0
+        else:
+            left_height = 0 if self.root.l is None else self._get_height(self.root.l)
+            right_height = 0 if self.root.r is None else self._get_height(self.root.r)
+            return max(left_height, right_height)
 
     def _get_height(self, node):
         left_height = 0 if node.l is None else self._get_height(node.l)

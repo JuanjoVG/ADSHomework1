@@ -20,11 +20,11 @@ def generate_points(n):
     return [rand() for _ in range(n)]
 
 
-def generate_bt(points):
-    bt = BinaryTree()
-    for p in points:
-        bt.add(p)
-    return bt
+def generate_bt(points_to_insert):
+    binary_tree = BinaryTree()
+    for p in points_to_insert:
+        binary_tree.add(p)
+    return binary_tree
 
 
 results = {}
